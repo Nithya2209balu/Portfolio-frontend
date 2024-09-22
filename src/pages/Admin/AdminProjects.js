@@ -24,7 +24,7 @@ function AdminProjects() {
             let response
             if(selectedItemForEdit)
             {
-                response = await axios.post("/api/portfolio/update-project",{
+                response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/portfolio/update-project`,{
                     ...values,
                     _id: selectedItemForEdit._id,
                 });

@@ -15,7 +15,7 @@ function Login() {
     const login = async ()=>{
         try{
             dispatch(ShowLoading());
-            const response = await axios.post('/api/portfolio/admin-login',user);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/portfolio/admin-login`,user);
             dispatch(HideLoading());
             if(response.data.success){
             message.success(response.data.message);
