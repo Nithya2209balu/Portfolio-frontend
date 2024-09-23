@@ -24,12 +24,12 @@ function AdminProjects() {
             let response
             if(selectedItemForEdit)
             {
-                response = await axios.post('https://portfolio-backend-n.onrender.com/api/portfolio/update-project',{
+                response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/portfolio/update-project`,{
                     ...values,
                     _id: selectedItemForEdit._id,
                 });
             }else{
-                response = await axios.post("https://portfolio-backend-n.onrender.com/api/portfolio/add-project", values);
+                response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/portfolio/add-project`, values);
             }
        
             dispatch(HideLoading())
@@ -52,7 +52,7 @@ function AdminProjects() {
     const onDelete = async(item)=>{
         try{
             dispatch(ShowLoading());
-            const response = await axios.post("https://portfolio-backend-n.onrender.com/api/portfolio/delete-project",{
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/portfolio/delete-project1`,{
                 _id:item._id,
             });
             dispatch(HideLoading());

@@ -16,7 +16,7 @@ function Admin() {
 
     useEffect(()=>{
         if(!localStorage.getItem("token")){
-            window.localStorage.href = "https://portfolio-backend-n.onrender.com/admin-login";
+            window.localStorage.href = "/admin-login";
         }
 
     },[])
