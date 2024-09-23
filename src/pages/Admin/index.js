@@ -16,7 +16,7 @@ function Admin() {
 
     useEffect(()=>{
         if(!localStorage.getItem("token")){
-            window.localStorage.href = "http://localhost:3000/admin-login";
+            window.localStorage.href = "https://portfolio-backend-n.onrender.com/admin-login";
         }
 
     },[])
@@ -32,7 +32,7 @@ function Admin() {
        <h1 className="underline text-primary text-xl cursor-pointer"
         onClick={()=>{
             localStorage.removeItem("token");
-            window.location.href="http://localhost:3000/admin-login";
+            window.location.href="/admin-login";
             
         }}>Logout</h1>
         </div>
